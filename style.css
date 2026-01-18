@@ -1311,7 +1311,7 @@ footer a:hover {
     }
 }
 
-/* WhatsApp Float Button */
+/* WhatsApp button - Fixed position */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -1457,15 +1457,27 @@ img {
     }
 }
 
-/* Back to top button */
+/* Back to top button - Fixed position */
 .back-to-top {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 999;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-top.show {
@@ -1473,7 +1485,13 @@ img {
     visibility: visible;
 }
 
-/* WhatsApp button safe position */
+.back-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp button positioning - Fixed */
 .whatsapp-float {
     bottom: 90px;
     z-index: 998;
