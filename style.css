@@ -1311,7 +1311,7 @@ footer a:hover {
     }
 }
 
-/* WhatsApp button - Initially hidden, appears on scroll */
+/* WhatsApp button - Always visible with animation */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -1329,13 +1329,9 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.whatsapp-float.show {
     opacity: 1;
     visibility: visible;
+    animation: pulse 2s infinite;
 }
 
 .whatsapp-float:hover {
@@ -1463,7 +1459,7 @@ img {
     }
 }
 
-/* Back to top button - Initially hidden, appears on scroll */
+/* Back to top button - Always visible */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1476,8 +1472,8 @@ img {
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: all 0.3s ease;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1486,18 +1482,13 @@ img {
     justify-content: center;
 }
 
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 .back-to-top:hover {
     background: var(--secondary-color);
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* WhatsApp button positioning - Appears on scroll */
+/* WhatsApp button positioning - Always visible */
 .whatsapp-float {
     bottom: 30px;
     right: 30px;
