@@ -1350,12 +1350,12 @@ footer a:hover {
     font-size: 30px;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     z-index: 1000;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
     animation: pulse 2s infinite;
 }
 
@@ -1451,6 +1451,8 @@ img {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 700;
     margin-bottom: 1rem;
+    display: block !important;
+    visibility: visible !important;
 }
 
 .hero-content .lead {
@@ -1458,6 +1460,17 @@ img {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: 400;
     margin-bottom: 1.5rem;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.hero-content .text-gradient {
+    background: linear-gradient(45deg, #ffd700, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #ffd700 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Prevent horizontal scroll */
@@ -1529,6 +1542,19 @@ img {
         margin-bottom: 0.75rem;
         width: 100%;
         max-width: 280px;
+    }
+    
+    /* Ensure WhatsApp button is visible on mobile */
+    .whatsapp-float {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 24px !important;
+        z-index: 1000 !important;
     }
 }
 
