@@ -60,13 +60,14 @@ body {
     transition: all 0.3s ease;
     padding: 1rem 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    display: flex   ;
+
 
 }
 
 .navbar.scrolled {
     background: rgba(26, 26, 46, 0.98) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    display: flex       ;
 }
 
 .navbar-brand {
@@ -111,6 +112,7 @@ body {
     cursor: pointer;
     z-index: 1000;
     padding: 5px;
+    display: flex;
 }
 
 .bar {
@@ -142,6 +144,7 @@ body {
         border-radius: 8px;
         margin-top: 1rem;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex   ;
     }
 
     .nav-item {
