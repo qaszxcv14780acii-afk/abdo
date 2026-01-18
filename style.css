@@ -49,6 +49,8 @@ body {
     font-family: 'Cairo', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    position: relative;
+    /* ensure body is positioned so absolutely positioned elements scroll with page */
 }
 
 /* ===== Navigation ===== */
@@ -232,13 +234,13 @@ html {
 @media (max-width: 991.98px) {
     .navbar-collapse {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-height);
         right: 0;
         left: 0;
         background: rgba(26, 26, 46, 0.98);
         backdrop-filter: blur(10px);
         padding: 2rem 1rem;
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - var(--navbar-height));
         overflow-y: auto;
         z-index: 999;
         border-radius: 0 0 20px 20px;
@@ -1128,6 +1130,22 @@ footer a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Force navbar to be fixed at top (explicit override) */
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1060;
+    /* allow natural height so contents are visible */
+    height: auto;
+}
+
+/* Ensure the collapsed mobile menu doesn't overlap content when open */
+.navbar-collapse {
+    max-height: calc(100vh - var(--navbar-height));
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 1200px) {
     .hero-profile-image {
@@ -1344,7 +1362,7 @@ footer a:hover {
 
 /* WhatsApp button - Always visible with animation */
 .whatsapp-float {
-   position: fixed !important;
+    position: fixed !important;
     width: 60px;
     height: 60px;
     bottom: 30px;
@@ -1376,7 +1394,7 @@ footer a:hover {
 .whatsapp-float i {
     margin-top: 2px;
     width: 100%;
-    height: 100%    ;
+    height: 100%;
 }
 
 @keyframes pulse {
@@ -1405,21 +1423,22 @@ footer a:hover {
         transform: translateY(0);
 
     }
-        .whatsapp-float {
-            animation: fadeInUp 1s ease-in-out;
+
+    .whatsapp-float {
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-    
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-    
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 }
 
 .fade-in-up {
@@ -1434,7 +1453,7 @@ footer a:hover {
         font-size: 25px;
         bottom: 20px;
         right: 20px;
-        
+
     }
 }
 
@@ -1608,6 +1627,26 @@ img {
     justify-content: center;
 }
 
+/* Make WhatsApp button part of the page flow (not fixed) and add floating animation */
+.whatsapp-float {
+    position: absolute !important;
+    animation: floatMove 4s ease-in-out infinite;
+}
+
+@keyframes floatMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .back-to-top:hover {
     background: var(--secondary-color);
     transform: translateY(-5px);
@@ -1642,7 +1681,7 @@ img {
 
 /* reserve space for fixed navbar to prevent it covering content */
 body {
-    padding-top: calc(var(--navbar-height) + env(safe-area-inset-top));
+    padding-top: calc(var(--navbar-height) + env(safe-area-inset-top, 0px));
 }
 
 /* adjust hero height to account for navbar on small screens */
