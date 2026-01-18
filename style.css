@@ -196,6 +196,31 @@ html {
     .section-title {
         font-size: 1.75rem;
     }
+    
+    /* Ensure hero text is visible on mobile */
+    .hero-content {
+        text-align: center;
+        padding: 2rem 1rem;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        font-weight: 700;
+    }
+    
+    .hero-content .lead {
+        font-size: 1rem;
+        color: #ffffff !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+    }
 }
 
 /* Improved mobile navigation */
@@ -1411,6 +1436,28 @@ img {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Hero content visibility fixes */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 1rem;
+}
+
+.hero-content h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content .lead {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
 }
 
 /* Prevent horizontal scroll */
@@ -1456,6 +1503,32 @@ img {
     
     .skill-card:hover {
         transform: translateY(-5px);
+    }
+    
+    /* Fix hero text visibility on mobile */
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content .lead {
+        font-size: 1rem;
+        color: #ffffff !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        margin-top: 1.5rem;
+    }
+    
+    .hero-buttons .btn {
+        margin-bottom: 0.75rem;
+        width: 100%;
+        max-width: 280px;
     }
 }
 
