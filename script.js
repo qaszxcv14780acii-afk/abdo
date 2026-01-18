@@ -87,16 +87,7 @@ window.addEventListener('scroll', updateActiveNavLink);
 const backToTopButton = document.getElementById('backToTop');
 
 if (backToTopButton) {
-    const updateBackToTopButton = throttleScroll(function() {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-    
-    window.addEventListener('scroll', updateBackToTopButton);
-    
+    // Remove scroll-based visibility - button is always visible
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
