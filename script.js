@@ -85,9 +85,23 @@ window.addEventListener('scroll', updateActiveNavLink);
 
 // ===== Back to Top Button =====
 const backToTopButton = document.getElementById('backToTop');
+const whatsappButton = document.querySelector('.whatsapp-float');
 
-if (backToTopButton) {
-    // Remove scroll-based visibility - button is always visible
+if (backToTopButton && whatsappButton) {
+    // Show buttons when scrolling down
+    const updateButtonsVisibility = throttleScroll(function() {
+        if (window.scrollY > 100) {
+            backToTopButton.classList.add('show');
+            whatsappButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+            whatsappButton.classList.remove('show');
+        }
+    });
+    
+    window.addEventListener('scroll', updateButtonsVisibility);
+    
+    // Back to top functionality
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
