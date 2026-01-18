@@ -18,6 +18,7 @@
 
 /* Disable animations on reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -173,6 +174,7 @@ html {
 
 /* Touch-friendly targets */
 @media (max-width: 768px) {
+
     .btn,
     .nav-link,
     .social-link {
@@ -182,21 +184,21 @@ html {
         align-items: center;
         justify-content: center;
     }
-    
+
     .hero-buttons .btn {
         margin-bottom: 0.75rem;
         width: 100%;
         max-width: 280px;
     }
-    
+
     .navbar-brand {
         font-size: 1.2rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     /* Ensure hero text is visible on mobile */
     .hero-content {
         text-align: center;
@@ -204,7 +206,7 @@ html {
         position: relative;
         z-index: 10;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
         line-height: 1.2;
@@ -213,7 +215,7 @@ html {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         font-weight: 700;
     }
-    
+
     .hero-content .lead {
         font-size: 1rem;
         color: #ffffff !important;
@@ -239,22 +241,22 @@ html {
         border-radius: 0 0 20px 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
-    
+
     .navbar-nav {
         text-align: center;
     }
-    
+
     .nav-item {
         margin: 0.5rem 0;
     }
-    
+
     .nav-link {
         padding: 1rem;
         border-radius: 10px;
         transition: all 0.3s ease;
         font-size: 1.1rem;
     }
-    
+
     .nav-link:hover {
         background: rgba(74, 144, 226, 0.2);
         transform: translateX(-5px);
@@ -1136,12 +1138,12 @@ footer a:hover {
         text-align: center;
         padding: 2rem 0;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .hero-image {
         margin-top: 2rem;
     }
@@ -1157,7 +1159,7 @@ footer a:hover {
         font-size: 2rem;
         line-height: 1.2;
     }
-    
+
     .hero-content .lead {
         font-size: 1rem;
     }
@@ -1255,21 +1257,21 @@ footer a:hover {
         width: 45px;
         height: 45px;
     }
-    
+
     .skill-card {
         padding: 1.5rem;
     }
-    
+
     .skill-icon {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
     }
-    
+
     .contact-info {
         padding: 1.5rem;
     }
-    
+
     .contact-info i {
         font-size: 2rem;
     }
@@ -1279,54 +1281,54 @@ footer a:hover {
     .hero-content h1 {
         font-size: 1.75rem;
     }
-    
+
     .hero-content .lead {
         font-size: 0.9rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .hero-profile-image {
         width: 180px;
         height: 180px;
     }
-    
+
     .code-window {
         transform: scale(0.8);
         margin: 0.5rem;
     }
-    
+
     .code-content {
         padding: 1rem;
     }
-    
+
     .code-content pre {
         font-size: 0.7rem;
     }
-    
+
     .project-image {
         height: 160px;
     }
-    
+
     .project-content {
         padding: 0.75rem;
     }
-    
+
     .project-tags .badge {
         font-size: 0.75rem;
         padding: 0.25rem 0.5rem;
     }
-    
+
     .contact-card {
         padding: 1rem;
     }
-    
+
     .form-floating {
         margin-bottom: 1rem;
     }
-    
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -1411,6 +1413,7 @@ footer a:hover {
         right: 20px;
     }
 }
+
 /* ===== FIX RESPONSIVE ISSUES ===== */
 html,
 body {
@@ -1495,29 +1498,29 @@ img {
     .floating-shapes {
         display: none;
     }
-    
+
     .profile-glow,
     .profile-border {
         display: none;
     }
-    
+
     .hero-section {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
-    
+
     .display-3 {
         font-size: 2.2rem;
     }
-    
+
     /* Reduce motion for better performance */
     .project-card:hover {
         transform: translateY(-5px);
     }
-    
+
     .skill-card:hover {
         transform: translateY(-5px);
     }
-    
+
     /* Fix hero text visibility on mobile */
     .hero-content h1 {
         font-size: 2rem;
@@ -1526,24 +1529,24 @@ img {
         color: #ffffff !important;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    
+
     .hero-content .lead {
         font-size: 1rem;
         color: #ffffff !important;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         margin-bottom: 1.5rem;
     }
-    
+
     .hero-buttons {
         margin-top: 1.5rem;
     }
-    
+
     .hero-buttons .btn {
         margin-bottom: 0.75rem;
         width: 100%;
         max-width: 280px;
     }
-    
+
     /* Ensure WhatsApp button is visible on mobile */
     .whatsapp-float {
         opacity: 1 !important;
@@ -1599,11 +1602,45 @@ img {
         bottom: 20px;
         right: 20px;
     }
-    
+
     .back-to-top {
         bottom: 20px;
         left: 20px;
         width: 45px;
         height: 45px;
+    }
+}
+
+/* ===== Small fixes to ensure full content is visible on phones ===== */
+:root {
+    --navbar-height: 70px;
+}
+
+/* reserve space for fixed navbar to prevent it covering content */
+body {
+    padding-top: calc(var(--navbar-height) + env(safe-area-inset-top));
+}
+
+/* adjust hero height to account for navbar on small screens */
+.hero-section {
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+@media (max-width: 576px) {
+    :root {
+        --navbar-height: 64px;
+    }
+
+    .hero-section {
+        min-height: calc(100vh - var(--navbar-height));
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* make sure large decorative elements don't push content off-screen */
+    .shape-1,
+    .shape-2,
+    .shape-3 {
+        display: none;
     }
 }
