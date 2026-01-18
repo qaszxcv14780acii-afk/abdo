@@ -1,598 +1,142 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <title>Portfolio | عبدالملك</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطور مواقع الويب | Web Developer Portfolio</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio مطور مواقع ويب - عبدالملك">
+    <meta name="theme-color" content="#0d6efd">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <i class="bi bi-code-slash me-2"></i>مطور الويب
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="تبديل القائمة">
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Abdulmalik</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">عني</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">المهارات</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">المشاريع</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تواصل</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100 flex-column-reverse flex-lg-row text-center text-lg-start">
+            
+            <div class="col-lg-6" data-aos="fade-right">
+                <h1 class="fw-bold">مرحباً، أنا عبدالملك</h1>
+                <h3 class="text-gradient mt-3">مطور مواقع ويب</h3>
+                <p class="mt-3 text-muted">
+                    Frontend Developer متخصص في بناء واجهات حديثة وسريعة
+                </p>
+
+                <div class="hero-buttons mt-4">
+                    <a href="#projects" class="btn btn-primary me-2">مشاريعي</a>
+                    <a href="#contact" class="btn btn-outline-primary">تواصل معي</a>
                 </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">الرئيسية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">من أنا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">المهارات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">المشاريع</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">اتصل بي</a>
-                    </li>
-                </ul>
+            </div>
+
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-left">
+                <img src="images/image.png" alt="Abdulmalik"
+                     class="profile-img img-fluid" width="350" height="350" loading="lazy">
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="hero-content text-white">
-                        <h1 class="display-3 fw-bold mb-4">
-                            مرحباً، أنا <span class="text-gradient">عبدالملك مطور مواقع الويب</span>
-                        </h1>
-                        <p class="lead mb-4">
-                            أتخصص في إنشاء مواقع ويب حديثة وجذابة باستخدام أحدث التقنيات نمتاز بخدمتكم
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary btn-lg me-3">
-                                <i class="bi bi-briefcase me-2"></i>مشاريعي
-                            </a>
-                            <a href="#contact" class="btn btn-outline-light btn-lg">
-                                <i class="bi bi-envelope me-2"></i>تواصل معي
-                            </a>
-                        </div>
-                        <div class="social-links mt-5">
-                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://x.com/BdalmlkA45278" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-                            <a href="https://www.facebook.com/share/15b3wd2NoPo/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                        </div>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+    <div class="container text-center">
+        <h2 class="section-title">عني</h2>
+        <p class="section-subtitle">
+            مطور واجهات أمامية مهتم بتجربة المستخدم والأداء العالي
+        </p>
+    </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">المهارات</h2>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="skill-card">HTML / CSS</div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill-card">JavaScript</div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill-card">React</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">المشاريع</h2>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.jpg" alt="Project">
                     </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="hero-image">
-                        <div class="floating-shapes">
-                            <div class="shape shape-1"></div>
-                            <div class="shape shape-2"></div>
-                            <div class="shape shape-3"></div>
-                        </div>
-                        <!-- الصورة الشخصية -->
-                        <div class="hero-profile-image">
-                            <img src="images/image.png" alt="صورة شخصية" class="profile-img" loading="eager">
-                            <div class="profile-border"></div>
-                            <div class="profile-glow"></div>
-                        </div>
-                        <div class="code-window">
-                            <div class="code-header">
-                                <span class="dot dot-red"></span>
-                                <span class="dot dot-yellow"></span>
-                                <span class="dot dot-green"></span>
-                            </div>
-                            <div class="code-content">
-                                <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
-  <span class="code-property">name</span>: <span class="code-string">'مطور الويب'</span>,
-  <span class="code-property">skills</span>: [<span class="code-string">'HTML'</span>, <span class="code-string">'CSS'</span>, <span class="code-string">'JavaScript'</span>],
-  <span class="code-property">passion</span>: <span class="code-string">'إنشاء مواقع رائعة'</span>
-};</code></pre>
-                            </div>
-                        </div>
-                    </div>
+                    <h5 class="mt-3">مشروع تجريبي</h5>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about"><i class="bi bi-chevron-down"></i></a>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="about-image">
-                        <img src="images/image.png" alt="من أنا" width="400" class="img-fluid rounded-4 shadow-lg about-profile-img" loading="lazy">
-                        <div class="experience-badge">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="section-title mb-4">من أنا</h2>
-                    <p class="lead text-muted mb-4">
-                        أنا عبدالملك سعد مطور مواقع ويب متخصص في إنشاء تطبيقات ويب حديثة وسريعة الاستجابة
-                        باستخدام أحدث التقنيات والأدوات.
-                    </p>
-                    <p class="mb-4">
-                        لدي شغف كبير بتصميم وتطوير واجهات مستخدم جميلة وسهلة الاستخدام.
-                        أعمل على تحويل الأفكار الإبداعية إلى واقع رقمي باستخدام HTML, CSS, JavaScript
-                        وأطر العمل الحديثة مثل Bootstrap و React.
-                    </p>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <i class="bi bi-check-circle-fill text-primary"></i>
-                                <h5>تصميم حديث</h5>
-                                <p class="text-muted">واجهات مستخدم عصرية وجذابة</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <i class="bi bi-check-circle-fill text-primary"></i>
-                                <h5>كود نظيف</h5>
-                                <p class="text-muted">كود منظم وسهل الصيانة</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <i class="bi bi-check-circle-fill text-primary"></i>
-                                <h5>متجاوب</h5>
-                                <p class="text-muted">يعمل على جميع الأجهزة</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <i class="bi bi-check-circle-fill text-primary"></i>
-                                <h5>أداء عالي</h5>
-                                <p class="text-muted">مواقع سريعة ومحسّنة</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">تواصل معي</h2>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">المهارات والتقنيات</h2>
-                <p class="lead text-muted">التقنيات والأدوات التي أستخدمها في عملي</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h4>Frontend Development</h4>
-                        <div class="skill-items">
-                            <span class="badge bg-primary">HTML5</span>
-                            <span class="badge bg-primary">CSS3</span>
-                            <span class="badge bg-primary">JavaScript</span>
-                            <span class="badge bg-primary">Bootstrap</span>
-                            <span class="badge bg-primary">React</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-server"></i>
-                        </div>
-                        <h4>Backend Development</h4>
-                        <div class="skill-items">
-                            <span class="badge bg-success">Node.js</span>
-                            <span class="badge bg-success">PHP</span>
-                            <span class="badge bg-success">Laravel</span>
-                            <span class="badge bg-success">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-tools"></i>
-                        </div>
-                        <h4>أدوات أخرى</h4>
-                        <div class="skill-items">
-                            <span class="badge bg-info">Git</span>
-                            <span class="badge bg-info">VS Code</span>
-                            <span class="badge bg-info">Figma</span>
-                            <span class="badge bg-info">Photoshop</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h4 class="mb-4 text-center">مستوى المهارات</h4>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item" data-aos="fade-right">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>HTML & CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar" role="progressbar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item" data-aos="fade-right" data-aos-delay="100">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item" data-aos="fade-right" data-aos-delay="200">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Bootstrap</span>
-                                <span>92%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar" role="progressbar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item" data-aos="fade-right" data-aos-delay="300">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>React</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress" style="height: 10px;">
-                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <form id="contactForm" class="col-md-6 mx-auto mt-4">
+            <input id="name" class="form-control mb-3" placeholder="الاسم">
+            <input id="email" type="email" class="form-control mb-3" placeholder="البريد">
+            <input id="subject" class="form-control mb-3" placeholder="العنوان">
+            <textarea id="message" class="form-control mb-3" placeholder="الرسالة"></textarea>
+            <button class="btn btn-primary w-100">إرسال</button>
+        </form>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">مشاريعي</h2>
-                <p class="lead text-muted">تصفح أحدث أعمالي</p>
-            </div>
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="مشروع متجر إلكتروني" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="https://example-store.com" class="btn btn-primary me-2" target="_blank">عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project1Modal">تفاصيل أكثر</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>متجر إلكتروني متكامل</h4>
-                            <p>منصة تسوق إلكتروني بتقنيات حديثة</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">React</span>
-                                <span class="badge bg-primary">Node.js</span>
-                                <span class="badge bg-primary">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ================= BACK TO TOP ================= -->
+<button id="backToTop"><i class="bi bi-arrow-up"></i></button>
 
-                <!-- Project 2 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6" alt="تطبيق جوال" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="https://play.google.com/store/apps" class="btn btn-primary me-2" target="_blank">تحميل التطبيق</a>
-                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project2Modal">تفاصيل أكثر</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>تطبيق جوال</h4>
-                            <p>تطبيق لإدارة المهام اليومية</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">Flutter</span>
-                                <span class="badge bg-primary">Firebase</span>
-                                <span class="badge bg-primary">Dart</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="موقع شركة" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="https://company-website.com" class="btn btn-primary me-2" target="_blank">زيارة الموقع</a>
-                                <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project3Modal">تفاصيل أكثر</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>موقع شركة</h4>
-                            <p>بوابة إلكترونية لشركة تقنية</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">HTML5</span>
-                                <span class="badge bg-primary">CSS3</span>
-                                <span class="badge bg-primary">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="row g-4">
-                <!-- مشروع 1: موقع تجارة إلكترونية -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="موقع تجارة إلكترونية" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-cart-check me-2 text-primary"></i>موقع تجارة إلكترونية</h4>
-                            <p class="text-muted">منصة متكاملة للتجارة الإلكترونية مع نظام دفع آمن، سلة تسوق ذكية، وإدارة كاملة للمنتجات</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">HTML5</span>
-                                <span class="badge bg-primary">CSS3</span>
-                                <span class="badge bg-primary">JavaScript</span>
-                                <span class="badge bg-primary">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- مشروع 2: تطبيق إدارة المهام -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop" alt="تطبيق إدارة المهام" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-check2-square me-2 text-success"></i>تطبيق إدارة المهام</h4>
-                            <p class="text-muted">تطبيق ويب متقدم لإدارة المهام مع إشعارات، تصنيفات، وإحصائيات مفصلة للإنتاجية</p>
-                            <div class="project-tags">
-                                <span class="badge bg-success">React</span>
-                                <span class="badge bg-success">Bootstrap</span>
-                                <span class="badge bg-success">API</span>
-                                <span class="badge bg-success">LocalStorage</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- مشروع 3: لوحة تحكم إدارية -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="لوحة تحكم إدارية" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-speedometer2 me-2 text-info"></i>لوحة تحكم إدارية</h4>
-                            <p class="text-muted">لوحة تحكم احترافية مع رسوم بيانية تفاعلية، إحصائيات مباشرة، وإدارة المستخدمين</p>
-                            <div class="project-tags">
-                                <span class="badge bg-info">React</span>
-                                <span class="badge bg-info">Chart.js</span>
-                                <span class="badge bg-info">Bootstrap</span>
-                                <span class="badge bg-info">REST API</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- مشروع 4: منصة تعليمية -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop" alt="منصة تعليمية" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-book me-2 text-warning"></i>منصة تعليمية</h4>
-                            <p class="text-muted">منصة تعليمية شاملة مع دورات تفاعلية، نظام اختبارات، وتتبع التقدم</p>
-                            <div class="project-tags">
-                                <span class="badge bg-warning text-dark">Vue.js</span>
-                                <span class="badge bg-warning text-dark">Node.js</span>
-                                <span class="badge bg-warning text-dark">MongoDB</span>
-                                <span class="badge bg-warning text-dark">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- مشروع 5: تطبيق طقس -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=800&h=600&fit=crop" alt="تطبيق الطقس" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-cloud-sun me-2 text-primary"></i>تطبيق الطقس</h4>
-                            <p class="text-muted">تطبيق طقس تفاعلي مع توقعات دقيقة، خرائط الطقس، وإشعارات الطقس</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">JavaScript</span>
-                                <span class="badge bg-primary">API</span>
-                                <span class="badge bg-primary">Bootstrap</span>
-                                <span class="badge bg-primary">Geolocation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- مشروع 6: مدونة تقنية -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop" alt="مدونة تقنية" loading="lazy">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4><i class="bi bi-journal-text me-2 text-danger"></i>مدونة تقنية</h4>
-                            <p class="text-muted">مدونة تقنية حديثة مع نظام إدارة محتوى، تصنيفات، تعليقات، وبحث متقدم</p>
-                            <div class="project-tags">
-                                <span class="badge bg-danger">Laravel</span>
-                                <span class="badge bg-danger">PHP</span>
-                                <span class="badge bg-danger">MySQL</span>
-                                <span class="badge bg-danger">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">اتصل بي</h2>
-                <p class="lead text-muted">أنا متاح للعمل على مشاريع جديدة ومثيرة</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-card" data-aos="fade-up">
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="الاسم" required>
-                                        <label for="name"><i class="bi bi-person me-2"></i>الاسم</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني" required>
-                                        <label for="email"><i class="bi bi-envelope me-2"></i>البريد الإلكتروني</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="الموضوع" required>
-                                        <label for="subject"><i class="bi bi-tag me-2"></i>الموضوع</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="message" style="height: 150px" placeholder="الرسالة" required></textarea>
-                                        <label for="message"><i class="bi bi-chat-dots me-2"></i>الرسالة</label>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">
-                                        <i class="bi bi-send me-2"></i>إرسال الرسالة
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="contact-info">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <h5>العنوان</h5>
-                                <p class="text-muted">صنعاء اليمن</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="contact-info">
-                                <i class="bi bi-telephone-fill"></i>
-                                <h5>الهاتف</h5>
-                                <p class="text-muted">+967779830449</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="contact-info">
-                                <i class="bi bi-envelope-fill"></i>
-                                <h5>البريد</h5>
-                                <p class="text-muted">email@example.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2026 مطور الويب. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-                    <a href="#" class="text-white me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://x.com/BdalmlkA45278" class="text-white me-3" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.facebook.com/share/15b3wd2NoPo/" class="text-white" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
-
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/+967779830449" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
