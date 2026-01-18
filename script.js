@@ -1,3 +1,26 @@
+// ===== Performance Optimizations =====
+// Optimize scroll performance
+let ticking = false;
+function requestTick(callback) {
+    if (!ticking) {
+        requestAnimationFrame(callback);
+        ticking = true;
+        setTimeout(() => { ticking = false; }, 100);
+    }
+}
+
+// Throttle scroll events
+const throttleScroll = (callback, delay = 16) => {
+    let lastCall = 0;
+    return function(...args) {
+        const now = Date.now();
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            callback.apply(this, args);
+        }
+    };
+};
+
 // ===== Navigation Scroll Effect =====
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
@@ -15,6 +38,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             const offsetTop = target.offsetTop - 80;
+            
+            // Use smooth scroll with better performance
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -22,23 +47,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Close mobile menu if open
             const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
             }
         }
     });
 });
 
 // ===== Active Navigation Link =====
-window.addEventListener('scroll', function() {
+const updateActiveNavLink = throttleScroll(function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
     let current = '';
+    const scrollPosition = window.scrollY + 100;
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
@@ -51,35 +81,42 @@ window.addEventListener('scroll', function() {
     });
 });
 
+window.addEventListener('scroll', updateActiveNavLink);
+
 // ===== Back to Top Button =====
 const backToTopButton = document.getElementById('backToTop');
 
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
-
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopButton) {
+    const updateBackToTopButton = throttleScroll(function() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
     });
-});
+    
+    window.addEventListener('scroll', updateBackToTopButton);
+    
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // ===== Handle Missing Images & Image Optimization =====
 const handleMissingImages = () => {
     const images = document.querySelectorAll('img[src*="images/"]');
+    
     images.forEach(img => {
         // تحسين جودة الصورة عند التحميل
         img.addEventListener('load', function() {
             this.style.opacity = '0';
-            this.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
+            this.style.transition = 'opacity 0.3s ease';
+            requestAnimationFrame(() => {
                 this.style.opacity = '1';
-            }, 100);
+            });
         });
         
         // معالجة الأخطاء
@@ -221,19 +258,19 @@ const typingEffect = () => {
     // type();
 };
 
-// ===== Project Card Hover Effect Enhancement =====
+// ===== Project Card Hover Effect Enhancement (Optimized) =====
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach((card, index) => {
     // تحسين تأثير hover
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-15px)';
-        this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        this.style.transition = 'all 0.3s ease';
         
         // إضافة تأثير للصورة
         const img = this.querySelector('.project-image img');
         if (img) {
-            img.style.transform = 'scale(1.15)';
+            img.style.transform = 'scale(1.1)';
         }
     });
     
@@ -246,14 +283,14 @@ projectCards.forEach((card, index) => {
         }
     });
     
-    // تأثير عند الظهور
+    // تأثير عند الظهور (optimized)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
+                });
                 observer.unobserve(entry.target);
             }
         });
@@ -261,7 +298,7 @@ projectCards.forEach((card, index) => {
     
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
+    card.style.transition = 'all 0.5s ease';
     observer.observe(card);
 });
 
@@ -281,28 +318,28 @@ const optimizeProjectImages = () => {
             this.alt = 'صورة المشروع';
         });
         
-        // تأثير fade-in عند التحميل
+        // تأثير fade-in عند التحميل (optimized)
         img.addEventListener('load', function() {
             this.style.opacity = '0';
-            this.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
+            this.style.transition = 'opacity 0.3s ease';
+            requestAnimationFrame(() => {
                 this.style.opacity = '1';
-            }, 100);
+            });
         });
     });
 };
 
-// ===== Skill Cards Animation =====
+// ===== Skill Cards Animation (Optimized) =====
 const skillCards = document.querySelectorAll('.skill-card');
 
 const animateSkillCards = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
+                });
                 observer.unobserve(entry.target);
             }
         });
@@ -311,7 +348,7 @@ const animateSkillCards = () => {
     skillCards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
+        card.style.transition = 'all 0.4s ease';
         observer.observe(card);
     });
 };
@@ -348,23 +385,111 @@ const animateCounter = () => {
 };
 
 // ===== Initialize animations on page load =====
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+            disable: window.innerWidth < 768 // Disable on mobile
+        });
+    }
+    
+    // Initialize other features
     handleMissingImages();
     enhanceImageEffects();
     optimizeProjectImages();
     animateSkillCards();
     animateCounter();
     typingEffect();
+    revealSections();
+    addRippleEffect();
 });
 
-// ===== Parallax Effect for Hero Section =====
-window.addEventListener('scroll', function() {
+// ===== SEO and Accessibility Improvements =====
+// Add proper ARIA labels
+const addAriaLabels = () => {
+    // Navigation
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        navbar.setAttribute('aria-label', 'التنقل الرئيسي');
+    }
+    
+    // Social links
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach((link, index) => {
+        const platforms = ['GitHub', 'LinkedIn', 'Twitter', 'Facebook'];
+        if (platforms[index]) {
+            link.setAttribute('aria-label', `تابعنا على ${platforms[index]}`);
+        }
+    });
+    
+    // Project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        const title = card.querySelector('h4');
+        if (title) {
+            card.setAttribute('aria-label', `مشروع: ${title.textContent}`);
+        }
+    });
+};
+
+// Add schema.org structured data
+const addStructuredData = () => {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "عبدالملك سعد",
+        "jobTitle": "مطور مواقع الويب",
+        "description": "مطور ويب محترف متخصص في إنشاء مواقع حديثة وجذابة",
+        "url": window.location.href,
+        "sameAs": [
+            "https://x.com/BdalmlkA45278",
+            "https://www.facebook.com/share/15b3wd2NoPo/"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Node.js", "PHP", "Laravel"],
+        "offers": {
+            "@type": "Service",
+            "serviceType": "تطوير مواقع الويب",
+            "description": "إنشاء مواقع ويب حديثة وسريعة الاستجابة"
+        }
+    };
+    
+    // Check if script already exists
+    let script = document.querySelector('script[type="application/ld+json"]');
+    if (!script) {
+        script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData, null, 2);
+        document.head.appendChild(script);
+    }
+};
+
+// Initialize SEO improvements
+addAriaLabels();
+addStructuredData();
+
+// ===== Parallax Effect for Hero Section (Optimized) =====
+let parallaxEnabled = window.innerWidth > 768; // Disable on mobile for performance
+
+const updateParallax = throttleScroll(function() {
+    if (!parallaxEnabled) return;
+    
     const scrolled = window.pageYOffset;
     const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroSection.style.opacity = 1 - scrolled / 500;
+    if (heroSection && scrolled < 500) {
+        requestAnimationFrame(() => {
+            heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroSection.style.opacity = 1 - scrolled / 800;
+        });
     }
+});
+
+window.addEventListener('scroll', updateParallax);
+window.addEventListener('resize', function() {
+    parallaxEnabled = window.innerWidth > 768;
 });
 
 // ===== Add loading animation =====

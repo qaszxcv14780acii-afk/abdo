@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مطور مواقع الويب | Web Developer Portfolio</title>
     
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="عبدالملك سعد - مطور مواقع ويب محترف متخصص في إنشاء مواقع حديثة وسريعة الاستجابة باستخدام أحدث التقنيات">
+    <meta name="keywords" content="مطور ويب, تصميم مواقع, برمجة, HTML, CSS, JavaScript, React, Bootstrap, عبدالملك سعد">
+    <meta name="author" content="عبدالملك سعد">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="ar">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="عبدالملك سعد - مطور مواقع الويب">
+    <meta property="og:description" content="مطور ويب محترف متخصص في إنشاء مواقع حديثة وجذابة">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:locale" content="ar_AR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="عبدالملك سعد - مطور مواقع الويب">
+    <meta name="twitter:description" content="مطور ويب محترف متخصص في إنشاء مواقع حديثة وجذابة">
+    <meta name="twitter:image" content="">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="">
+    
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -90,7 +129,7 @@
                         </div>
                         <!-- الصورة الشخصية -->
                         <div class="hero-profile-image">
-                            <img src="images/image.png" alt="صورة شخصية" class="profile-img" loading="eager">
+                            <img src="images/image.png" alt="صورة شخصية لعبدالملك سعد مطور ويب" class="profile-img" loading="eager" fetchpriority="high" width="300" height="300">
                             <div class="profile-border"></div>
                             <div class="profile-glow"></div>
                         </div>
@@ -123,7 +162,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="about-image">
-                        <img src="images/image.png" alt="من أنا" width="400" class="img-fluid rounded-4 shadow-lg about-profile-img" loading="lazy">
+                        <img src="images/image.png" alt="صورة شخصية لعبدالملك سعد" width="400" height="300" class="img-fluid rounded-4 shadow-lg about-profile-img" loading="lazy" fetchpriority="low">
                         <div class="experience-badge">
                             
                         </div>
@@ -285,9 +324,9 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="مشروع متجر إلكتروني" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&auto=format" alt="مشروع متجر إلكتروني" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="https://example-store.com" class="btn btn-primary me-2" target="_blank">عرض المشروع</a>
+                                <a href="#" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">عرض المشروع</a>
                                 <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project1Modal">تفاصيل أكثر</a>
                             </div>
                         </div>
@@ -307,9 +346,9 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6" alt="تطبيق جوال" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=800&h=600&fit=crop&auto=format" alt="تطبيق جوال" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="https://play.google.com/store/apps" class="btn btn-primary me-2" target="_blank">تحميل التطبيق</a>
+                                <a href="#" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">تحميل التطبيق</a>
                                 <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project2Modal">تفاصيل أكثر</a>
                             </div>
                         </div>
@@ -329,9 +368,9 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="موقع شركة" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&auto=format" alt="موقع شركة" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="https://company-website.com" class="btn btn-primary me-2" target="_blank">زيارة الموقع</a>
+                                <a href="#" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">زيارة الموقع</a>
                                 <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#project3Modal">تفاصيل أكثر</a>
                             </div>
                         </div>
@@ -351,10 +390,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="موقع تجارة إلكترونية" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&auto=format" alt="موقع تجارة إلكترونية" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -374,10 +413,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop" alt="تطبيق إدارة المهام" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop&auto=format" alt="تطبيق إدارة المهام" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -397,10 +436,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="لوحة تحكم إدارية" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&auto=format" alt="لوحة تحكم إدارية" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -420,10 +459,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop" alt="منصة تعليمية" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop&auto=format" alt="منصة تعليمية" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -443,10 +482,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=800&h=600&fit=crop" alt="تطبيق الطقس" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=800&h=600&fit=crop&auto=format" alt="تطبيق الطقس" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -466,10 +505,10 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop" alt="مدونة تقنية" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop&auto=format" alt="مدونة تقنية" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-light" target="_blank"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
-                                <a href="#" class="btn btn-outline-light" target="_blank"><i class="bi bi-github"></i></a>
+                                <a href="#" class="btn btn-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye me-2"></i>عرض المشروع</a>
+                                <a href="#" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -578,7 +617,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
+    <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
         <i class="bi bi-arrow-up"></i>
     </button>
 
@@ -594,5 +633,33 @@
     
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "عبدالملك سعد",
+        "jobTitle": "مطور مواقع الويب",
+        "description": "مطور ويب محترف متخصص في إنشاء مواقع حديثة وجذابة",
+        "url": "",
+        "sameAs": [
+            "https://x.com/BdalmlkA45278",
+            "https://www.facebook.com/share/15b3wd2NoPo/"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Node.js", "PHP", "Laravel"],
+        "offers": {
+            "@type": "Service",
+            "serviceType": "تطوير مواقع الويب",
+            "description": "إنشاء مواقع ويب حديثة وسريعة الاستجابة"
+        }
+    }
+    </script>
+    
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Custom JS -->
+    <script src="script.js" defer></script>
 </body>
 </html>
